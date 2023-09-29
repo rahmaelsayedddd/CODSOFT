@@ -70,300 +70,162 @@ header .toggle-menu:hover {
 header .toggle-menu:hover + .links {
     display: block;
 }
-header .container .links {
+header .container .link {
     list-style: none;
-    background-color: #333333;
-    min-width: 200px;
-    position: absolute;
-    right: 140px;
-    margin: 0;
-    padding: 0;
-    top: calc(100% + 5px);
-    z-index: 2;
-    display: none;
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
 }
-header .container .links a {
-    color: white;
+header .container .link li {
+    margin-right: 35px;
+}
+header .container .link li a {
     font-size: 18px;
-    text-decoration: none;
-    cursor: pointer;
+    color: black;
 }
-header .container .links li {
-    display: block;
-    padding: 15px;
-    transition: 0.3s;
+header .container .link li a.active {
+    color: rgba(243,159,64,255);
 }
-header .container .links li:hover {
-    padding-left: 10px;
-}
-header .container .links li:not(:nth-child(4)) {
-    border-bottom: 2px solid #eee;
+header .container .link li a:hover {
+    color: rgba(243,159,64,255);
 }
 /* End Header */
 /* Start Home-Page */
 .home-page {
-    /* width: 1620px; */
-    height: 100vh;
+    height: 748px;
     color: white;
     margin-top: 5px;
     background-color: black;
-    background-image: url(../Images/baking-concept-with-ingredients-dark.jpg);
-    background-size: cover;
+    background-image: url(../images/fgfg-min.jpg);
+    background-size:cover;
+    background-position: 50% 50%;
+    position: relative;
 }
 .home-page .overlay {
     width: 100%;
     height: 100%;
-    background-color: rgb(0 0 0 / 25%);
+    background-color: rgb(0 0 0 / 45%);
 }
 .home-page .content {
+    background-color: transparent;
+    width: 80%;
+    color: black;
     position: absolute;
-    left: 50%;
-    top: 55%;
-    transform: translateX(-50%);
-    width: 50%;
+    top: 20%;
+    left: -10%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-@media (max-width: 991px) {
-    .home-page .content {
-        width: 80%;
-        /* top: 40%; */
+.home-page .content img {
+    width: 150px;
+    margin-bottom: 20px;
+    animation: scale-up-tl;
+    animation-duration: 1.4s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+}
+.scale-up-tl {
+	-webkit-animation: scale-up-tl 2s cubic-bezier(0.680, -0.550, 0.265, 1.550) both;
+	animation: scale-up-tl 2s cubic-bezier(0.680, -0.550, 0.265, 1.550) both;
+}
+@-webkit-keyframes scale-up-tl {
+    0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    }
+    100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
     }
 }
+@keyframes scale-up-tl {
+    0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    }
+    100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    }
+}
+
 .home-page .text {
+    padding: 20px;
+    width: 53%;
     text-align: center;
-    margin-bottom: 40px;
-    width: 740px;
-}
-.home-page .text h2 {
-    font-weight: normal;
-    font-size: 55px;
+    background-color: transparent;
     margin-bottom: 30px;
+    animation: scale-up-center ease-in 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-direction: alternate;
 }
-.home-page .text p {
-    font-size: 23px;
-    line-height: 1.6;
-    letter-spacing: 1px;
+.home-page .text p:first-child {
+    font-size: 60px;
     color: white;
+    margin-bottom: 20px;
+    font-weight: 300;
 }
-.home-page .buttons {
-    position: absolute;
-    top: 85%;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
+.home-page .text p:last-child {
+    color: #eee;
+    font-size: 20px;
+    line-height: 1.6;
 }
-.home-page .buttons button {
+.home-page button {
     text-align: center;
+    width: 188px;
+    height: 56px;
+    border: 2px solid white;
+    border-radius: 28px;
     color: white;
     font-weight: bold;
     font-size: 15px;
     letter-spacing: 1px;
     background-color: transparent;
-    border: 2px solid white;
-    border-radius: 25px;
-    margin: 10px 60px;
-    padding: 15px 45px;
-}
-.home-page .buttons button:hover {
-    background-color: white;
-    color: black;
     cursor: pointer;
+    animation: scale-up-center ease-in 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-direction: alternate;
+}
+.home-page button:hover {
+    color: black;
+    background-color: white;
+}
+.scale-up-center {
+	-webkit-animation: scale-up-center 0.9s ease-in alternate both;
+	animation: scale-up-center 0.9s ease-in alternate both;
+}
+@-webkit-keyframes scale-up-center {
+    0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    }
+    100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    }
+}
+@keyframes scale-up-center {
+    0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    }
+    100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    }
 }
 /* End Home-Page */
-/* Start Breads */
-.breads {
-    background-color: #eee;
-}
-.bakery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
-    grid-gap: 30px;
-    padding-bottom: 70px;
-}
-.bread {
-    border: 1px solid #ddd;
-    box-shadow: 2px 2px #777;
-    padding: 20px;
-    width: fit-content;
-    background-color: white;
-    text-align: center;
-    margin-bottom: 15px;
-}
-.bread img {
-    margin-bottom: 15px;
-    max-width: 100%;
-}
-.bread h3 {
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-}
-.bread p {
-    line-height: 1.6;
-    font-size: 15px;
-    margin-bottom: 20px;
-    color: #404040;
-}
-.bread p a {
-    color: #404040;
-    text-decoration: none;
-    position: relative;
-}
-.bread p a:hover::after {
-    background-color: white;
-}
-.bread p a::after {
-    content: '';
-    position: absolute;
-    width: 80px;
-    height: 1px;
-    background-color: black;
-    bottom: -3px;
-    left: 4%;
-}
-.bread p + a {
-    position: relative;
-    color: #404040;
-    text-decoration: none;
-}
-.bread p + a::after {
-    content: '';
-    position: absolute;
-    width: 40px;
-    height: 1px;
-    background-color: black;
-    bottom: -5px;
-    left: 4%;
-}
-/* End Breads */
-/* Start Brownies */
-.brownies {
-    background-color: black;
-    color:white;
-}
-.brownies .bread h3 {
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    color: black;
-}
-.brownies .bread p {
-    /* width: 250px; */
-    line-height: 1.6;
-    font-size: 15px;
-    margin-bottom: 20px;
-    color: #404040;
-}
-/* End Brownies */
-/* Start Contact */
-.contact {
-    background-image: url(../Images/spoon-filled-with-sand_23-2148724063.avif);
-    background-size: cover;
-    padding-bottom: 60px;
-}
-.contact form {
-    padding-left: 280px;
-}
-.contact form .name-email {
-    display: flex;
-}
-.contact form .name-email .field {
-    display: flex;
-    flex-direction: column;
-}
-.contact form .name-email .field {
-    flex-basis: 5px;
-}
-.contact form #email,
-.contact form #name {
-    flex: 1;
-    width: 270px;
-    height: 50px;
-    padding: 10px;
-    border: 2px solid #bbbbbb;
-    border-radius: 20px;
-    color: #eee;
-    font-size: 14px;
-    font-weight: 300;
-    margin-right: 30px;
-    margin-top: 5px;
-}
-.contact form button {
-    width: 580px;
-    height: 48px;
-    padding: 5px;
-    border-color: transparent;
-    border-radius: 25px;
-    color: white;
-    background-color: black;
-    font-size: 18px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    display: block;
-    margin-top: 30px;
-    cursor: pointer;
-}
-.contact form button:hover {
-    background-color: #777;
-}
-.contact .informations {
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
-    margin-top: 120px;
-}
-/* .contact .informations {
-    margin-top: 140px;
-    display: flex;
-} */
-.contact .info {
-    color: black;
-    margin-right: 60px;
-    text-align: center;
-}
-.contact .info a {
-    display: block;
-    font-size: 18px;
-    font-weight: bold;
-    color: black;
-    text-decoration: none;
-    margin-bottom: 30px;
-    position: relative;
-}
-/* .contact .info a::after {
-    content: '';
-    position: absolute;
-    width: 135px;
-    height: 1px;
-    background-color: rgba(243,159,64,255);
-    bottom: -5px;
-    left: 4%;
-} */
-.contact .info a::after {
-    content: '';
-    position: absolute;
-    width: 135px;
-    height: 1px;
-    background-color: rgba(243,159,64,255);
-    bottom: -5px;
-    left: 30%;
-}
-.contact .info a:hover::after {
-    background-color: #777;
-}
-.contact .info h2 {
-    margin-bottom: 20px;
-}
-.contact .info p {
-    font-size: 20px;
-    line-height: 1.6;
-}
-/* End Contact */
-/* Start Footer */
-footer {
-    padding-top: 30px;
-    padding-bottom: 40px;
-    background-color: #333333;
-    color: white;
-    text-align: center;
-    font-size: 17px;
-}
-/* End Footer */
